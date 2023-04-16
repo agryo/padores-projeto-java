@@ -1,12 +1,12 @@
 package com.dio.projeto;
 
-import javax.sound.midi.Soundbank;
-import java.util.Timer;
+import com.dio.projeto.singleton.*;
+import com.dio.projeto.strategy.*;
 
 public class Teste {
     public static void main(String[] args) {
         //Testes relacionados aos Singletons
-
+        System.out.println("Testes do Singleton");
         SingletonLazy preguicoso = SingletonLazy.getInstancia();
         System.out.println(preguicoso);
         preguicoso = SingletonLazy.getInstancia();
@@ -21,5 +21,24 @@ public class Teste {
         System.out.println(titular);
         titular = SingletonLazyHolder.getInstancia();
         System.out.println(titular);
+
+        //Testes relacionados ao Strategy
+        System.out.println("\nTestes do Strategy");
+        Comportamento defensivo = new ComportamentoDefensivo();
+        Comportamento normal = new ComportamentoNormal();
+        Comportamento agressivo = new ComportamentoAgressivo();
+
+        Robo robo = new Robo();
+        robo.setComportamento(normal);
+        robo.mover();
+        robo.mover();
+
+        robo.setComportamento(defensivo);
+        robo.mover();
+
+        robo.setComportamento(agressivo);
+        robo.mover();
+        robo.mover();
+        robo.mover();
     }
 }

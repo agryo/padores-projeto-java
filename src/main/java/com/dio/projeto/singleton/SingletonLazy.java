@@ -1,4 +1,4 @@
-package com.dio.projeto;
+package com.dio.projeto.singleton;
 
 /**
  * Singleton "Preguiçoso"
