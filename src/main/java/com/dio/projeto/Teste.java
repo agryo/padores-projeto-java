@@ -1,5 +1,6 @@
 package com.dio.projeto;
 
+import com.dio.projeto.facade.Facade;
 import com.dio.projeto.singleton.*;
 import com.dio.projeto.strategy.*;
 
@@ -40,5 +41,9 @@ public class Teste {
         robo.mover();
         robo.mover();
         robo.mover();
+
+        //Testes relacionados ao Facade
+        Facade facade = new Facade();
+        facade.migrarCliente("Agryo", "59375000");
     }
 }
